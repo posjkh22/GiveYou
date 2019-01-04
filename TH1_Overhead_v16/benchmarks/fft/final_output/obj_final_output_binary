@@ -47,14 +47,13 @@ Disassembly of section .note.gnu.build-id:
   40027e:	00 00                	add    %al,(%rax)
   400280:	47                   	rex.RXB
   400281:	4e 55                	rex.WRX push %rbp
-  400283:	00 5b 63             	add    %bl,0x63(%rbx)
-  400286:	de 69 f1             	fisubr -0xf(%rcx)
-  400289:	83 45 11 77          	addl   $0x77,0x11(%rbp)
-  40028d:	77 56                	ja     4002e5 <_init-0x7d3>
-  40028f:	94                   	xchg   %eax,%esp
-  400290:	50                   	push   %rax
-  400291:	63 ba bc 9b 10 0f    	movslq 0xf109bbc(%rdx),%edi
-  400297:	3e                   	ds
+  400283:	00 ab 84 4a af 3c    	add    %ch,0x3caf4a84(%rbx)
+  400289:	e2 ea                	loop   400275 <_init-0x843>
+  40028b:	0b 87 1b e5 db c8    	or     -0x37241ae5(%rdi),%eax
+  400291:	4d 93                	rex.WRB xchg %rax,%r11
+  400293:	40 7f ec             	rex jg 400282 <_init-0x836>
+  400296:	ae                   	scas   %es:(%rdi),%al
+  400297:	ad                   	lods   %ds:(%rsi),%eax
 
 Disassembly of section .gnu.hash:
 
@@ -3753,7 +3752,7 @@ Disassembly of section .text:
   403bfb:	eb 0a                	jmp    403c07 <CFE_INJECTION+0x10d>
   403bfd:	bf 42 47 40 00       	mov    $0x404742,%edi
   403c02:	e8 29 cf ff ff       	callq  400b30 <puts@plt>
-  403c07:	e9 9f d8 ff ff       	jmpq   4014ab <Index_to_frequency+0x5b>
+  403c07:	e9 8f df ff ff       	jmpq   401b9b <fft_float+0x67b>
   403c0c:	eb 01                	jmp    403c0f <CFE_INJECTION+0x115>
   403c0e:	90                   	nop
   403c0f:	c9                   	leaveq 
